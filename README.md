@@ -13,10 +13,17 @@ S3 Presigned URL のドメインをカスタムドメインに差し替え、Clo
                https://{bucket}.s3.amazonaws.com/upload/{key}?X-Amz-Signature=xxx
 ```
 
+## 検証項目
+
+- Presigned URL の GET/PUT が CloudFront 経由で動作するか
+- マルチパートアップロード（各パートの PUT + ETag 取得）が CloudFront 経由で動作するか
+- CORS（`Access-Control-Expose-Headers: ETag`）が CloudFront 経由で正しく返るか
+- OAC あり（署名なし）と OAC なし（Presigned URL）のビヘイビアが同一ディストリビューションで共存できるか
+
 ## 先行検証で判明した事実
 
 - **OAC + Presigned URL は併用不可**（`Only one auth mechanism allowed`）
-- OACなし + Presigned URL でリバースプロキシは正常動作する
+- OACなし + Presigned URL でリバースプロキシは正常動作する（GET で確認済み）
 
 ## 構成
 
