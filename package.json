@@ -5,13 +5,17 @@
   "type": "module",
   "scripts": {
     "generate-put-url": "tsx scripts/generate-put-presigned-url.ts",
-    "generate-multipart-urls": "tsx scripts/generate-multipart-presigned-urls.ts"
+    "generate-multipart-urls": "tsx scripts/generate-multipart-presigned-urls.ts",
+    "test-multipart-full": "tsx scripts/test-multipart-full-flow.ts",
+    "test-cf-signed-multipart": "tsx scripts/test-cf-signed-multipart.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.800.0",
+    "@aws-sdk/cloudfront-signer": "^3.1005.0",
     "@aws-sdk/s3-request-presigner": "^3.800.0"
   },
   "devDependencies": {
-    "tsx": "^4.19.0"
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
   }
 }
