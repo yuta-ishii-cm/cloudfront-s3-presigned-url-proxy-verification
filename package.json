@@ -1,0 +1,17 @@
+{
+  "name": "cloudfront-s3-presigned-url-proxy-verification",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate-put-url": "tsx scripts/generate-put-presigned-url.ts",
+    "generate-multipart-urls": "tsx scripts/generate-multipart-presigned-urls.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.800.0",
+    "@aws-sdk/s3-request-presigner": "^3.800.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0"
+  }
+}
